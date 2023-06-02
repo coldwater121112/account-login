@@ -51,8 +51,7 @@ app.post('/', (req, res) => {
         return res.redirect('/')
       }
       else {
-        console.log('User not found')
-        res.status(404).send('User not found')
+        res.render('login', { username: user.firstName })
       }
     })
     .catch(error => {
